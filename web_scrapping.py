@@ -50,7 +50,24 @@ def realtime_Stock_value(stock_code):
     
     return web_content
 
-NSE = ['MOTHERSUMI.NS','HEROMOTOCO.NS','BAJAJ-AUTO.NS','EICHERMOT.NS']
+NSE = ['MOTHERSUMI.NS','HEROMOTOCO.NS','BAJAJ-AUTO.NS','EICHERMOT.NS','UVSL.NS','%5ENSEI?','PNB.NS','IOB.NS','EC4RG-MF.NS','BIRET-RR.NS','KSERASERA.NS','RJBIOTECH.BO','METSL.BO','UNITDCR.BO','GC%3DF','0P0000XVM5.BO','CENTRALBK.NS','GCMSECU.BO']
+
+# def url():
+#     https://in.finance.yahoo.com/quote/UVSL.NS?p=UVSL.NS
+#     https://in.finance.yahoo.com/quote/%5ENSEI?p=%5ENSEI
+#     https://in.finance.yahoo.com/quote/PNB.NS?p=PNB.NS
+#     https://in.finance.yahoo.com/quote/IOB.NS?p=IOB.NS
+#     https://in.finance.yahoo.com/quote/EC4RG-MF.NS?p=EC4RG-MF.NS
+#     https://in.finance.yahoo.com/quote/BIRET-RR.NS?p=BIRET-RR.NS
+#     https://in.finance.yahoo.com/quote/KSERASERA.NS?p=KSERASERA.NS
+#     https://in.finance.yahoo.com/quote/RJBIOTECH.BO?p=RJBIOTECH.BO
+#     https://in.finance.yahoo.com/quote/METSL.BO?p=METSL.BO
+#     https://in.finance.yahoo.com/quote/UNITDCR.BO?p=UNITDCR.BO
+#     https://in.finance.yahoo.com/quote/GC%3DF?p=GC%3DF
+#     https://in.finance.yahoo.com/quote/0P0000XVM5.BO?p=0P0000XVM5.BO
+#     https://in.finance.yahoo.com/quote/CENTRALBK.NS?p=CENTRALBK.NS
+#     https://in.finance.yahoo.com/quote/GCMSECU.BO?p=GCMSECU.BO
+#     pass
 
 # print("Motherson Sumi Systems Limited: " + str(realtime_Stock_value('MOTHERSUMI.NS')))
 # print("Hero MotoCorp Limited: "+ str(realtime_Stock_value('HEROMOTOCO.NS')))
@@ -58,7 +75,7 @@ NSE = ['MOTHERSUMI.NS','HEROMOTOCO.NS','BAJAJ-AUTO.NS','EICHERMOT.NS']
 # print("Eicher Motors Limited: "+ str(realtime_Stock_value('EICHERMOT.NS')))
 # print("USD Vs Rupee:" + str(realtime_rupee_value()))
 
-for step in range(1,101):
+for step in range(1,10):
     price = []
     cols = []
     time_stamp = datetime.datetime.now()
@@ -69,6 +86,6 @@ for step in range(1,101):
     col.extend(price)
     df = pd.DataFrame(col)
     df = df.T 
-    df.to_csv("/home/manju838/coding/env/pytorch_env/Live_Plotting/Realtime Motherson Sumi Systems Limited Stock Price.csv",header = False,mode = 'a')
+    df.to_csv("/home/manju838/coding/env/pytorch_env/Live_Plotting/Stock.csv",header = False,mode = 'a')
     print(col)
     
